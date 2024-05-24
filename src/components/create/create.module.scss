@@ -1,0 +1,17 @@
+.create {
+  border: thin solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem auto;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+  padding: 1rem;
+  .createForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

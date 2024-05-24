@@ -1,0 +1,23 @@
+.LoginMain{
+
+   display: flex;
+  padding:1rem;
+   align-items: center;
+   justify-content: center;
+
+
+   .LoginForm{
+
+    padding:2rem 1rem;
+    border:thin solid rgb(202, 202, 202);
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+ 
+
+  
+   }
+}

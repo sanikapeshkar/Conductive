@@ -1,0 +1,19 @@
+.BoardCard{
+    padding:1rem;
+    border:thin solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap:1.5rem;
+
+    .RateContainer{
+
+    }
+    .BtnContainer{
+        display: flex;
+        gap:0.5rem;
+        button{
+            flex:1;
+        }
+    }
+}

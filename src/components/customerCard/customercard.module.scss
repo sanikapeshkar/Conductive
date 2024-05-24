@@ -1,0 +1,12 @@
+.CustomerCard{
+    display: flex;
+    flex-direction: column;
+padding:1rem;
+border:thin solid black;
+gap:1rem;
+border-radius: 5px;
+    .BtnContainer{
+        display: flex;
+        gap:1rem;
+    }
+}
