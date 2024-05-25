@@ -3,8 +3,11 @@ import styles from "./login.module.scss";
 import  { checkPage,checkLogincredentials } from "../../services/getLogin";
 import { useState } from "react";
 
-
-export default function Login() {
+interface LoginProps
+{
+  handlerole:(role:string)=>void;
+}
+  export default function Login({handlerole}:LoginProps) {
   const [role,setRole]=useState("")
   const { register, handleSubmit } = useForm();
 
@@ -31,7 +34,7 @@ export default function Login() {
           Login
         </button>
         <a href={`/${role}`}>
-          &
+          <button>&</button>
         </a>
       
       </form>

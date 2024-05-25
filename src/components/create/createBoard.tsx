@@ -1,15 +1,16 @@
 import { useForm } from "react-hook-form";
 import styles from "./create.module.scss";
 import { checkLogincredentials } from "../../services/getLogin";
+import { sendboard } from "../../services/create";
 
 //creating a board one will provide  boardname and boardadminemail
-export default function CreateBoard() {
+export default function CreateBoard({}:CreateProps) {
   const { register, handleSubmit } = useForm();
 
   async function createboard(data: any) {
     console.log(data); //send this data
-    // const roleId=await checkLogincredentials(data.email, data.password);
-    // sendboard(data.email, data.password,roleId);
+    const roleId=await checkLogincredentials(data.email, data.password);
+    sendboard(data.email, data.password,roleId);
   }
   return (
     <div className={styles.create}>

@@ -1,0 +1,17 @@
+.Popup{
+    position: absolute;
+    min-height: 100vh;
+    width:98.5vw;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.421);
+    .PopupInner{
+        padding:0.5rem;
+        box-shadow: 1px 1px 1px 1px rgb(169, 169, 169);
+        width:fit-content;
+        background-color: aliceblue;
+    }
+}

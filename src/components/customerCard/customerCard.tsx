@@ -1,11 +1,11 @@
 import styles from './customercard.module.scss'
 
 
-export default function CustomerCard(){
+export default function CustomerCard({name,category}:CustomerProps){
     return(
         <div className={styles.CustomerCard}>
-            <h3>Customer Name</h3>
-            <h2>Board Name</h2>
+            <h3>{name}nsmns</h3>
+            <h2>{category}</h2>
             <div className={styles.BtnContainer}>
             <button className="">Edit</button>
             <button>Delete</button>

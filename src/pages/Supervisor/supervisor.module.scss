@@ -1,0 +1,19 @@
+.SupervisorMain {
+    max-height: 80vh;
+    display: flex;
+    .TopBar{
+      display: flex;
+      gap:1rem;
+  }
+    .Main {
+      flex: 5;
+      padding: 1rem;
+    
+    }
+    .Tabs{
+      margin:1rem;
+      max-height:65vh;
+      overflow-y: scroll;
+    }
+  }
+  

@@ -1,22 +1,25 @@
-import styles from './sidebar.module.scss'
-interface SidebarProps{
-    handleTab:(tab:string)=>void
-}
+import { useEffect, useState } from "react";
+import styles from "./sidebar.module.scss";
+import { SIDEBARDATA, SidebarProps } from "./sidebardata";
 
-export const Sidebar=({handleTab}:SidebarProps)=>{
+export const Sidebar = ({ handleTab, role }: SidebarProps) => {
+  const [tab, settabs] = useState<string[]>([]);
 
+  useEffect(() => {
+    const roleEach = SIDEBARDATA.find((f) => f.role === role);
+    if (roleEach) {
+      settabs(roleEach.tabs);
+    }
+  }, [role]);
+  return (
+    <div className={styles.SidebarMain}>
+      <ul className={styles.MenuList}>
+        <h2>{role} </h2>
 
-    return(
-        <div className={styles.SidebarMain}>
-            <h2>Role</h2>
-
-            <ul className={styles.MenuList}>
-                <li onClick={()=>handleTab('board')}>Boards</li>
-                <li onClick={()=>handleTab('customer')}>Customers</li>
-                <li onClick={()=>handleTab('employee')}>Employees</li>
-                <li onClick={()=>handleTab('tickets')}>Tickets</li>
-                <li onClick={()=>handleTab('reports')}>Reports</li>
-            </ul>
-        </div>
-    )
-}
+        {tab.map((t) => (
+          <li onClick={() => handleTab(t)}>{t}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};

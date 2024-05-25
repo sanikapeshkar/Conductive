@@ -1,4 +1,5 @@
 .SuperAdminMain {
+  max-height: 80vh;
   display: flex;
   .TopBar{
     display: flex;
@@ -7,11 +8,11 @@
   .Main {
     flex: 5;
     padding: 1rem;
-    .BoardList {
-      margin: 1rem;
-      display: flex;
-      flex-direction: row;
-      gap: 1.5rem;
-    }
+  
+  }
+  .Tabs{
+    margin:1rem;
+    max-height:65vh;
+    overflow-y: scroll;
   }
 }
