@@ -1,26 +1,31 @@
 import { useForm } from "react-hook-form";
 import styles from "./login.module.scss";
-import  { checkPage,checkLogincredentials } from "../../services/getLogin";
-import { useState } from "react";
+import { checkPage, checkLogincredentials } from "../../services/getLogin";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-interface LoginProps
-{
-  handlerole:(role:string)=>void;
+interface LoginProps {
 }
-  export default function Login({handlerole}:LoginProps) {
-  const [role,setRole]=useState("")
+export default function Login({}: LoginProps) {
+  const [role, setRole] = useState("");
   const { register, handleSubmit } = useForm();
-
-  const onsubmit =async (data: any) => {
+  const navigate = useNavigate();
+  const onsubmit = async (data: any) => {
     console.log(data);
 
-    const roleId=await checkLogincredentials(data.email, data.password);
+    const roleId = await checkLogincredentials(data.email, data.password);
     console.log(roleId);
-    const role= await checkPage(roleId);
-      console.log(role)
+    const role = await checkPage(roleId);
+    console.log(role);
     setRole(role.toLowerCase());
-
-  };  
+  };
+  useEffect(() => {
+    if (role) {
+      if (role) {
+        navigate(`/${role}`);
+      }
+    }
+  }, [navigate, role]);
 
   return (
     <div className={styles.LoginMain}>
@@ -29,14 +34,8 @@ interface LoginProps
         <input {...register("email")} placeholder="email here"></input>
         <input {...register("password")} type="password" required></input>
 
-
-        <button type="submit">
-          Login
-        </button>
-        <a href={`/${role}`}>
-          <button>&</button>
-        </a>
-      
+        <button type="submit">Login</button>
+  
       </form>
     </div>
   );

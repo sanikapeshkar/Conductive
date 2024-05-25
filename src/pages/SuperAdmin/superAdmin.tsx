@@ -1,16 +1,16 @@
 import { useState } from "react";
-import SearchBar from "../../components/SearchBar/searchbar";
-import { Sidebar } from "../../components/Sidebar/sidebar";
 import styles from "./superAdmin.module.scss";
-import Boards from "../../components/Board/BoardList/boards";
-import Customer from "../Customer/customer";
-import Employee from "../../components/EmployeeList/employee";
-import Tickets from "../../components/TicketsList/tickets";
-import Popup from "../../components/Popup/popup";
+import { Sidebar } from "../../components/ui/Sidebar/sidebar";
+import SearchBar from "../../components/ui/SearchBar/searchbar";
+import Popup from "../../components/ui/Popup/popup";
 import CreateBoard from "../../components/create/createBoard";
-import Customers from "../../components/CustomersList/customers";
+import Boards from "../../components/Board/BoardList/boards";
+import Customers from "../../components/customer/CustomersList/customers";
+import Employee from "../../components/Employee/EmployeeList/employee";
+import Tickets from "../../components/TicketsList/tickets";
 
-function SuperAdmin({ role }: SuperAdminProps) {
+
+function SuperAdmin({  }: SuperAdminProps) {
   const [tab, settab] = useState("board");
   const [open, setopen] = useState(false);
   function handletab(tab: string) {
@@ -30,9 +30,9 @@ function SuperAdmin({ role }: SuperAdminProps) {
       
         </div>
         <div className={styles.Tabs}>
-        {tab === "board" && <Boards />}
-        {tab === "customer" && <Customers />}
-        {tab === "employee" && <Employee />}
+        {tab === "boards" && <Boards />}
+        {tab === "customers" && <Customers />}
+        {tab === "employees" && <Employee />}
         {tab === "tickets" && <Tickets />}
         </div>
       </div>

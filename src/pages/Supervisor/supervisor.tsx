@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Sidebar } from "../../components/Sidebar/sidebar";
 import styles from "./supervisor.module.scss";
-import Boards from "../../components/Board/BoardList/boards";
-import Customers from "../../components/CustomersList/customers";
-
-import Tickets from "../../components/TicketsList/tickets";
-import WorkersList from "../../components/WorkersList/workers";
 import { SupervisorProps } from "./supervisor.types";
-import SearchBar from "../../components/SearchBar/searchbar";
-import Popup from "../../components/Popup/popup";
+
 import CreateBoard from "../../components/create/createBoard";
+import { Sidebar } from "../../components/ui/Sidebar/sidebar";
+import SearchBar from "../../components/ui/SearchBar/searchbar";
+import Popup from "../../components/ui/Popup/popup";
+import Boards from "../../components/Board/BoardList/boards";
+import Customers from "../../components/customer/CustomersList/customers";
+import WorkersList from "../../components/Employee/WorkersList/workers";
+import Tickets from "../../components/TicketsList/tickets";
 
 export default function Supervisor({}: SupervisorProps) {
   const [tab, settab] = useState("board");
@@ -18,7 +18,7 @@ export default function Supervisor({}: SupervisorProps) {
     settab(tab);
   }
   return (
-    <div className={styles.SupervisorMain}>
+    <div className={styles.BoardAdminMain}>
       <Sidebar handleTab={handletab} role="supervisor" />
       <div className={styles.Main}>
         <div className={styles.TopBar}>
@@ -32,8 +32,8 @@ export default function Supervisor({}: SupervisorProps) {
           )}
         </div>
         <div className={styles.Tabs}>
-          {tab === "board" && <Boards />}
-          {tab === "customer" && <Customers />}
+          {tab === "boards" && <Boards />}
+          {tab === "customers" && <Customers />}
           {tab === "workerdata" && <WorkersList />}
           {tab === "tickets" && <Tickets />}
         </div>

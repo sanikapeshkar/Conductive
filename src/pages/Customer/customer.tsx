@@ -1,5 +1,5 @@
-import Customers from '../../components/CustomersList/customers';
-import CustomerCard from '../../components/customerCard/customerCard';
+
+import Customers from '../../components/customer/CustomersList/customers';
 import styles from './customer.module.scss'
 
 

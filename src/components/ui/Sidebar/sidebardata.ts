@@ -23,7 +23,7 @@ export const SIDEBARDATA: SidebarData[] = [
   },
   {
     role: "boardadmin",
-    tabs: ["boardsDashboard", "Reports", "archives"],
+    tabs: ["boardsDashboard", "reports", "archives"],
   },
   {
     role: "boardmember",

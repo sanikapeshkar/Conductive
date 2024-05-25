@@ -17,7 +17,7 @@ export const Sidebar = ({ handleTab, role }: SidebarProps) => {
         <h2>{role} </h2>
 
         {tab.map((t) => (
-          <li onClick={() => handleTab(t)}>{t}</li>
+          <li onClick={() => {console.log(t);handleTab(t)}}>{t}</li>
         ))}
       </ul>
     </div>

@@ -1,4 +1,5 @@
-import CustomerCard from '../customerCard/customerCard'
+
+import CustomerCard from '../../customer/customerCard/customerCard'
 import styles from './employee.module.scss'
 
 

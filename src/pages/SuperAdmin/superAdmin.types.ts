@@ -1,3 +1,3 @@
 interface SuperAdminProps{
-    role:string
+   
 }
