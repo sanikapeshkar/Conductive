@@ -1,20 +1,14 @@
 import { useState } from "react";
 import styles from "./boardmember.module.scss";
 import Boards from "../../components/Board/BoardList/boards";
-
-
 import Tickets from "../../components/TicketsList/tickets";
-
-import CreateBoard from "../../components/create/createBoard";
-import SearchBar from "../../components/ui/SearchBar/searchbar";
-import Popup from "../../components/ui/Popup/popup";
 import WorkersList from "../../components/Employee/WorkersList/workers";
 import { Sidebar } from "../../components/ui/Sidebar/sidebar";
 import Customers from "../../components/customer/CustomersList/customers";
+import TopBar from "../../components/ui/TopBar/TopBar";
 
 export default function BoardMember({}: BoardMemberProps) {
   const [tab, settab] = useState("board");
-  const [open, setopen] = useState(false);
   function handletab(tab: string) {
     settab(tab);
   }
@@ -22,16 +16,7 @@ export default function BoardMember({}: BoardMemberProps) {
     <div className={styles.BoardMemberMain}>
       <Sidebar handleTab={handletab} role="boardmember" />
       <div className={styles.Main}>
-        <div className={styles.TopBar}>
-          <SearchBar />
-
-          <button onClick={() => setopen(true)}>Create</button>
-          {open && (
-            <Popup isOpen={open} onClose={() => setopen(false)}>
-              <CreateBoard />
-            </Popup>
-          )}
-        </div>
+      <TopBar options={["reliance", "MSME", "board3"]}/>
         <div className={styles.Tabs}>
           {tab === "board" && <Boards />}
           {tab === "customer" && <Customers />}

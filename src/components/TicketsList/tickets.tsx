@@ -1,7 +1,7 @@
 
 import styles from './tickets.module.scss'
 
-export default function Tickets(){
+export default function TicketsList(){
     return<div className={styles.Tickets}>
         Tickets
     </div>

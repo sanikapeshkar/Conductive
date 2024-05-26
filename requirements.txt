@@ -1,0 +1,13 @@
+Pages 
+
+
+SUPERADMIN
+     BOARDS- get api for all board details with rates
+           - post api for create board
+           - patch api for edit board details
+           - delete api for delete board and all related data 
+     CUSTOMERS -get api tto fetch all customers of all boards 
+              - patch api to edit a customer of a certain board
+              - delete api for a customer
+     EMPLOYEES -
+     TICKETS

@@ -25,7 +25,7 @@ export default function Boards() {
   return (
     <div className={styles.BoardList}>
       {allboards.map((a) => (
-        <BoardCard name={a.name} />
+        <BoardCard boardId={a.boardId} name={a.name} rateh1={10} rateh2={20} rates1={10} rates2={10} />
       ))}
     </div>
   );

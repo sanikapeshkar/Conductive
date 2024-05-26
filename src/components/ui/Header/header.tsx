@@ -3,6 +3,6 @@ export default function Header(){
 
     return(<div className={styles.Header}>
 
-        <h2>Conductive</h2>
+       <a href="/"><h2>Conductive</h2></a> 
         </div>)
 }

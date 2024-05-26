@@ -2,8 +2,9 @@
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
-  box-shadow: 2px 1px 1px 1px gray;
-  border-radius: 10px;
+  border:thin solid rgb(237, 237, 237);
+  box-shadow: 1px 1px 0.25px 0.25px rgb(214, 214, 214);
+  border-radius: 8px;
   flex: 2;
   input {
     border: none;

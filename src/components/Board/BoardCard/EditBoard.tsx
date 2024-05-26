@@ -1,8 +1,9 @@
 import { useForm } from "react-hook-form";
 import styles from "./editboard.module.scss";
 import { EditBoardProps } from "./boardcard.types";
+import { editboard } from "../../../services/getdata";
 
-function EditBoard({ name, onClose }:EditBoardProps) {
+function EditBoard({ boardId,name, onClose }:EditBoardProps) {
   const { register, handleSubmit } = useForm({
     defaultValues: {
       name: name,
@@ -12,6 +13,7 @@ function EditBoard({ name, onClose }:EditBoardProps) {
   const onSubmit = (data:any) => {
     console.log(data);
   
+    editboard(boardId,data);
     onClose();
   };
 
@@ -24,7 +26,7 @@ function EditBoard({ name, onClose }:EditBoardProps) {
           <input {...register("name")} />
         </label>
        
-        <button type="submit">Save</button>
+        <button type="submit" >Save</button>
         <button type="button" onClick={onClose}>Cancel</button>
       </form>
     </div>

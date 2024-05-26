@@ -1,0 +1,22 @@
+.DropDownForm {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 20px;
+  }
+  
+ 
+  .DropDownSelect {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .DropDownSelect:focus {
+    outline: none;
+    border-color: #009879;
+  }
+  

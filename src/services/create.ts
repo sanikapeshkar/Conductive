@@ -1,6 +1,6 @@
-import { PiPassword } from "react-icons/pi";
 import authAxios from "./axiosInstance";
 
+//to create a new board
 export const sendboard = async (
   email: string,
   password: string,
